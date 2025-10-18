@@ -5,39 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7545daa4-55e5-494c-adbb-102b577629d5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/AutoPacman.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/animation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/entity.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fruit.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ghosts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/junk.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mazedata.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nodes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pacman.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pauser.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pellets.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/q_network.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/PressStart2P-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/maze1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/maze1_rotation.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/maze2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/maze2_rotation.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/mazetest.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/spritesheet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/spritesheet_mspacman.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/spritesheet_pacman2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sprites.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/text.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vector.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/replay_buffer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/AutoPacman.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AutoPacman.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/q_network.py" beforeDir="false" afterPath="$PROJECT_DIR$/q_network.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,9 +27,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "AndyQu2"
+  }
 }]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/AndyQu2/AutoPacman.git",
+    "accountId": "8609754e-cf91-405a-afc3-3871f250fdaf"
+  }
+}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="34ECCYwMKOx6PnnC0vLfYM97KmX" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -74,12 +59,14 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/student/PycharmProjects/AutoPacman",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -103,7 +90,6 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.13 (AutoPacman)" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -122,7 +108,6 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-PY-252.26830.99" />
         <option value="bundled-python-sdk-164cda30dcd9-0af03a5fa574-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.26830.99" />
       </set>
     </attachedChunks>
