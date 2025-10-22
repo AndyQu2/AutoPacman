@@ -1,7 +1,7 @@
 import pygame
 from pygame.locals import *
-from vector import Vector2
-from constants import *
+from Pacman.vector import Vector2
+from Pacman.constants import *
 from random import randint
 
 class Entity(object):

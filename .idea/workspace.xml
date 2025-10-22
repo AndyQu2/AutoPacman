@@ -4,13 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7545daa4-55e5-494c-adbb-102b577629d5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/replay_buffer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/AutoPacman.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AutoPacman.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="7545daa4-55e5-494c-adbb-102b577629d5" name="Changes" comment="Working on the Deep Q Learning Model">
+      <change afterPath="$PROJECT_DIR$/Pacman/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auto_run.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/animation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/animation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entity.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/entity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fruit.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/fruit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ghosts.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/ghosts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/junk.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/junk.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mazedata.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/mazedata.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modes.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/modes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nodes.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/nodes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pacman.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/pacman.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pauser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/pauser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pellets.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/pellets.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/q_network.py" beforeDir="false" afterPath="$PROJECT_DIR$/q_network.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/PressStart2P-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/resources/PressStart2P-Regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/maze1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/resources/maze1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/maze1_rotation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/resources/maze1_rotation.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/maze2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/resources/maze2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/maze2_rotation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/resources/maze2_rotation.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/mazetest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/resources/mazetest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/spritesheet.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/resources/spritesheet.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/spritesheet_mspacman.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/resources/spritesheet_mspacman.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/spritesheet_pacman2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/resources/spritesheet_pacman2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/sprites.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/text.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/text.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vector.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/vector.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,18 +50,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "AndyQu2"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;AndyQu2&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/AndyQu2/AutoPacman.git",
-    "accountId": "8609754e-cf91-405a-afc3-3871f250fdaf"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/AndyQu2/AutoPacman.git&quot;,
+    &quot;accountId&quot;: &quot;8609754e-cf91-405a-afc3-3871f250fdaf&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -47,34 +70,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.PacmanGame.executor": "Run",
-    "Python.fruit.executor": "Run",
-    "Python.ghosts.executor": "Run",
-    "Python.run.executor": "Run",
-    "Python.text.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/student/PycharmProjects/AutoPacman",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.PacmanGame.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fruit.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ghosts.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run.executor&quot;: &quot;Run&quot;,
+    &quot;Python.text.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/student/PycharmProjects/AutoPacman&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\student\PycharmProjects\AutoPacman" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Fukien\PycharmProjects\AutoPacman\Pacman" />
+      <recent name="C:\Users\Fukien\PycharmProjects\AutoPacman" />
       <recent name="C:\Users\student\PycharmProjects\AutoPacman\resources" />
       <recent name="C:\Users\student\PycharmProjects\AutoPacman" />
       <recent name="C:\Users\student\PycharmProjects\AutoPacman\Pacman" />
@@ -121,10 +146,23 @@
       <updated>1760769217115</updated>
       <workItem from="1760769218190" duration="2942000" />
     </task>
+    <task id="LOCAL-00001" summary="Working on the Deep Q Learning Model">
+      <option name="closed" value="true" />
+      <created>1760776405869</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1760776405869</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Working on the Deep Q Learning Model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on the Deep Q Learning Model" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AutoPacman$fruit.coverage" NAME="fruit Coverage Results" MODIFIED="1760770028576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Pacman" />

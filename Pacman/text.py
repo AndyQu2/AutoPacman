@@ -1,6 +1,6 @@
 import pygame
-from vector import Vector2
-from constants import *
+from Pacman.vector import Vector2
+from Pacman.constants import *
 
 class Text(object):
     def __init__(self, text, color, x, y, size, time=None, id=None, visible=True):
@@ -14,7 +14,7 @@ class Text(object):
         self.lifespan = time
         self.label = None
         self.destroy = False
-        self.setupFont("resources\PressStart2P-Regular.ttf")
+        self.setupFont("Pacman\\resources\PressStart2P-Regular.ttf")
         self.createLabel()
 
     def setupFont(self, fontpath):

@@ -49,3 +49,21 @@ class DeepQNetwork:
             else:
                 action = np.random.randint(0, self.action_dim)
             return action
+
+    def update(self):
+        batch_s, batch_a, batch_s_, batch_r, batch_terminated = self.memory.sample(self.batch_size, with_log=False)
+        q_currents = self.policy_net(batch_s)
+        q_currents = q_currents.gather(-1, batch_a.unsqueeze(-1))
+
+        max_q_target = self.target_net(batch_s_).max(dim=-1)[0]
+        q_targets = batch_r + self.gamma * max_q_target.unsqueeze(-1) * (1 - batch_terminated)
+        td_errors = q_currents - q_targets
+        loss = (td_errors ** 2).mean()
+
+        self.optimizer.zero_grad()
+        loss.backward()
+        self.optimizer.step()
+
+        self.update_count += 1
+        if self.update_count % self.update_frequency == 0:
+            self.target_net.load_state_dict(self.policy_net.state_dict())

@@ -1,9 +1,9 @@
 import pygame
 from pygame.locals import *
-from vector import Vector2
-from constants import *
-from entity import Entity
-from sprites import PacmanSprites
+from Pacman.vector import Vector2
+from Pacman.constants import *
+from Pacman.entity import Entity
+from Pacman.sprites import PacmanSprites
 
 class Pacman(Entity):
     def __init__(self, node):
@@ -58,7 +58,7 @@ class Pacman(Entity):
             return LEFT
         if key_pressed[K_RIGHT]:
             return RIGHT
-        return STOP  
+        return STOP
 
     def eatPellets(self, pelletList):
         for pellet in pelletList:

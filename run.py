@@ -1,16 +1,16 @@
 import pygame
 from pygame.locals import *
-from constants import *
-from pacman import Pacman
-from nodes import NodeGroup
-from pellets import PelletGroup
-from ghosts import GhostGroup
-from fruit import Fruit
-from pauser import Pause
-from text import TextGroup
-from sprites import LifeSprites
-from sprites import MazeSprites
-from mazedata import MazeData
+from Pacman.constants import *
+from Pacman.pacman import Pacman
+from Pacman.nodes import NodeGroup
+from Pacman.pellets import PelletGroup
+from Pacman.ghosts import GhostGroup
+from Pacman.fruit import Fruit
+from Pacman.pauser import Pause
+from Pacman.text import TextGroup
+from Pacman.sprites import LifeSprites
+from Pacman.sprites import MazeSprites
+from Pacman.mazedata import MazeData
 
 class GameController(object):
     def __init__(self):
@@ -46,13 +46,13 @@ class GameController(object):
 
     def startGame(self):      
         self.mazedata.loadMaze(self.level)
-        self.mazesprites = MazeSprites("resources/"+self.mazedata.obj.name+".txt", "resources/"+self.mazedata.obj.name+"_rotation.txt")
+        self.mazesprites = MazeSprites("Pacman/resources/"+self.mazedata.obj.name+".txt", "Pacman/resources/"+self.mazedata.obj.name+"_rotation.txt")
         self.setBackground()
-        self.nodes = NodeGroup("resources/"+self.mazedata.obj.name+".txt")
+        self.nodes = NodeGroup("Pacman/resources/"+self.mazedata.obj.name+".txt")
         self.mazedata.obj.setPortalPairs(self.nodes)
         self.mazedata.obj.connectHomeNodes(self.nodes)
         self.pacman = Pacman(self.nodes.getNodeFromTiles(*self.mazedata.obj.pacmanStart))
-        self.pellets = PelletGroup("resources/"+self.mazedata.obj.name+".txt")
+        self.pellets = PelletGroup("Pacman/resources/"+self.mazedata.obj.name+".txt")
         self.ghosts = GhostGroup(self.nodes.getStartTempNode(), self.pacman)
 
         self.ghosts.pinky.setStartNode(self.nodes.getNodeFromTiles(*self.mazedata.obj.addOffset(2, 3)))
@@ -245,7 +245,6 @@ class GameController(object):
 
     def render(self):
         self.screen.blit(self.background, (0, 0))
-        #self.nodes.render(self.screen)
         self.pellets.render(self.screen)
         if self.fruit is not None:
             self.fruit.render(self.screen)
