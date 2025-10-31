@@ -5,35 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7545daa4-55e5-494c-adbb-102b577629d5" name="Changes" comment="Working on the Deep Q Learning Model">
-      <change afterPath="$PROJECT_DIR$/Pacman/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auto_run.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReinforcementLearning/deep_q_network.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReinforcementLearning/q_network.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReinforcementLearning/replay_buffer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/animation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/animation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entity.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/entity.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fruit.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/fruit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ghosts.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/ghosts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/junk.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/junk.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mazedata.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/mazedata.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modes.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/modes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nodes.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/nodes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pacman.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/pacman.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pauser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/pauser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pellets.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/pellets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/q_network.py" beforeDir="false" afterPath="$PROJECT_DIR$/q_network.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/PressStart2P-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/resources/PressStart2P-Regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/maze1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/resources/maze1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/maze1_rotation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/resources/maze1_rotation.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/maze2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/resources/maze2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/maze2_rotation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/resources/maze2_rotation.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/mazetest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/resources/mazetest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/spritesheet.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/resources/spritesheet.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/spritesheet_mspacman.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/resources/spritesheet_mspacman.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/spritesheet_pacman2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/resources/spritesheet_pacman2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/sprites.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/text.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/text.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vector.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/vector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/q_network.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/replay_buffer.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,11 +76,11 @@
       <recent name="C:\Users\student\PycharmProjects\AutoPacman" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Fukien\PycharmProjects\AutoPacman\ReinforcementLearning" />
       <recent name="C:\Users\Fukien\PycharmProjects\AutoPacman\Pacman" />
       <recent name="C:\Users\Fukien\PycharmProjects\AutoPacman" />
       <recent name="C:\Users\student\PycharmProjects\AutoPacman\resources" />
       <recent name="C:\Users\student\PycharmProjects\AutoPacman" />
-      <recent name="C:\Users\student\PycharmProjects\AutoPacman\Pacman" />
     </key>
   </component>
   <component name="RunManager">
