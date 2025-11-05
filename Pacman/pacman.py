@@ -48,6 +48,27 @@ class Pacman(Entity):
             if self.oppositeDirection(direction):
                 self.reverseDirection()
 
+    def update_manually(self, dt, directions):
+        self.sprites.update(dt)
+        self.position += self.directions[self.direction] * self.speed * dt
+        direction = directions
+        if self.overshotTarget():
+            self.node = self.target
+            if self.node.neighbors[PORTAL] is not None:
+                self.node = self.node.neighbors[PORTAL]
+            self.target = self.getNewTarget(direction)
+            if self.target is not self.node:
+                self.direction = direction
+            else:
+                self.target = self.getNewTarget(self.direction)
+
+            if self.target is self.node:
+                self.direction = STOP
+            self.setPosition()
+        else:
+            if self.oppositeDirection(direction):
+                self.reverseDirection()
+
     def getValidKey(self):
         key_pressed = pygame.key.get_pressed()
         if key_pressed[K_UP]:

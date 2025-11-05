@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7545daa4-55e5-494c-adbb-102b577629d5" name="Changes" comment="Working on the Deep Q Learning Model">
+      <change afterPath="$PROJECT_DIR$/game_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReinforcementLearning/deep_q_network.py" beforeDir="false" afterPath="$PROJECT_DIR$/ReinforcementLearning/deep_q_network.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auto_run.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pacman/animation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/animation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pacman/pacman.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/pacman.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -129,7 +130,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760776405869</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Working on the Deep Q Learning Model">
+      <option name="closed" value="true" />
+      <created>1762316059835</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1762316059835</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

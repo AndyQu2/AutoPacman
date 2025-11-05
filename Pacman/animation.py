@@ -15,7 +15,7 @@ class Animator(object):
 
     def update(self, dt):
         if not self.finished:
-            self.nextFrame(dt)
+            self.next_frame(dt)
         if self.current_frame == len(self.frames):
             if self.loop:
                 self.current_frame = 0
@@ -25,14 +25,8 @@ class Animator(object):
    
         return self.frames[self.current_frame]
 
-    def nextFrame(self, dt):
+    def next_frame(self, dt):
         self.dt += dt
         if self.dt >= (1.0 / self.speed):
             self.current_frame += 1
             self.dt = 0
-
-
-
-
-
-                        
