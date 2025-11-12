@@ -38,6 +38,8 @@ class DeepQNetwork:
         q_target = rewards + self.gamma * max_next_q_values * (1 - dones)
         dqn_loss = torch.mean(f.mse_loss(q_values, q_target))
         self.optimizer.zero_grad()
+        dqn_loss.backward()
+        self.optimizer.step()
 
         if self.count % self.target_update == 0:
             self.target_network.load_state_dict(self.q_network.state_dict())
