@@ -20,7 +20,7 @@ batch_size = 64
 device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
 
 env_name = "CartPole-v1"
-env = gym.make(env_name)
+env = gym.make(env_name, render_mode='human')
 random.seed(0)
 np.random.seed(0)
 torch.manual_seed(0)
@@ -37,6 +37,7 @@ for i in range(10):
             state, info = env.reset()
             done = False
             while not done:
+                env.render()
                 action = agent.take_action(state)
                 next_state, reward, done, _, _ = env.step(action)
                 replay_buffer.add(state, action, reward, next_state, done)
