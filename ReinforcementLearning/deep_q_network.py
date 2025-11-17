@@ -29,14 +29,16 @@ class DeepQNetwork:
 
     def update(self, transition_dict):
         states = torch.tensor(transition_dict['states'], dtype=torch.float).to(self.device)
-        actions = torch.tensor(transition_dict['actions']).view(-1, -1).to(self.device)
-        rewards = torch.tensor(transition_dict['rewards']).view(-1, 1).to(self.device)
+        actions = torch.tensor(transition_dict['actions']).view(-1, 1).to(self.device)
+        rewards = torch.tensor(transition_dict['rewards'], dtype=torch.float).view(-1, 1).to(self.device)
         next_states = torch.tensor(transition_dict['next_states'], dtype=torch.float).to(self.device)
-        dones = torch.tensor(transition_dict['dones']).view(-1, 1).to(self.device)
+        dones = torch.tensor(transition_dict['dones'], dtype=torch.float).view(-1, 1).to(self.device)
+
         q_values = self.q_network(states).gather(1, actions)
         max_next_q_values = self.target_network(next_states).max(1)[0].view(-1, 1)
         q_target = rewards + self.gamma * max_next_q_values * (1 - dones)
         dqn_loss = torch.mean(f.mse_loss(q_values, q_target))
+
         self.optimizer.zero_grad()
         dqn_loss.backward()
         self.optimizer.step()

@@ -34,11 +34,11 @@ for i in range(10):
     with tqdm.tqdm(total=int(num_episodes / 10), desc='Iteration %d' % i) as pbar:
         for i_episode in range(int(num_episodes / 10)):
             episode_return = 0
-            state = env.reset()
+            state, info = env.reset()
             done = False
             while not done:
                 action = agent.take_action(state)
-                next_state, reward, done, _ = env.step(action)
+                next_state, reward, done, _, _ = env.step(action)
                 replay_buffer.add(state, action, reward, next_state, done)
                 state = next_state
                 episode_return += reward
