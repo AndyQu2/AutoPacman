@@ -3,10 +3,12 @@ import torch
 from torch import optim
 from ReinforcementLearning.q_network import QNetwork
 from torch.nn import functional as f
+from torch import nn
 
-class DeepQNetwork:
+class DeepQNetwork(nn.Module):
     def __init__(self, state_dim, hidden_dim, action_dim,
                  learning_rate, gamma, epsilon, target_update, device):
+        super(DeepQNetwork, self).__init__()
         self.state_dim = state_dim
         self.action_dim = action_dim
         self.learning_rate = learning_rate

@@ -3,7 +3,6 @@ import gymnasium as gym
 import numpy as np
 import torch
 import tqdm
-
 from ReinforcementLearning.deep_q_network import DeepQNetwork
 from ReinforcementLearning.replay_buffer import ReplayBuffer
 
@@ -62,3 +61,8 @@ for i in range(10):
                     '%.3f' % np.mean(return_list[-10:])
                 })
             pbar.update(1)
+
+env.close()
+print("Training finished")
+torch.save(agent.state_dict(), "output\\test_gym.pth")
+print("Model is saved to output\\test_gym.pth")

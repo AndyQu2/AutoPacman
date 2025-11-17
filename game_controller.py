@@ -117,6 +117,7 @@ class GameController(object):
         if self.pacman.alive:
             if not self.pause.paused:
                 self.pacman.update(dt)
+                print(self.pacman.position)
         else:
             self.pacman.update(dt)
 
