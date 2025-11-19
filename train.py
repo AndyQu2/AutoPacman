@@ -1,25 +1,26 @@
 import random
-import gymnasium as gym
+
 import numpy as np
 import torch
 import tqdm
+
+from Pacman.gym_environment import PacmanEnvironment
 from ReinforcementLearning.deep_q_network import DeepQNetwork
 from ReinforcementLearning.replay_buffer import ReplayBuffer
 
-num_epochs = 20
+num_epochs = 10
 lr = 2e-3
 num_episodes = 500
-hidden_dim = 128
+hidden_dim = 512
 gamma = 0.98
 epsilon = 0.01
 target_update = 10
 buffer_size = 10000
 minimal_size = 500
-batch_size = 64
+batch_size = 128
 device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
 
-env_name = "CartPole-v1"
-env = gym.make(env_name, render_mode='human')
+env = PacmanEnvironment(render_mode='human')
 random.seed(0)
 np.random.seed(0)
 torch.manual_seed(0)
@@ -63,5 +64,5 @@ for i in range(10):
 
 env.close()
 print("Training finished")
-torch.save(agent.state_dict(), "output\\test_gym.pth")
-print("Model is saved to output\\gym.pth")
+torch.save(agent.state_dict(), "output\\pacman.pth")
+print("Model is saved to output\\pacman.pth")

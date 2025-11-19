@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7545daa4-55e5-494c-adbb-102b577629d5" name="Changes" comment="Minor improvement in render the Gym Environment">
-      <change afterPath="$PROJECT_DIR$/Gym/output/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gym/test_gym.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReinforcementLearning/deep_q_network.py" beforeDir="false" afterPath="$PROJECT_DIR$/ReinforcementLearning/deep_q_network.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_gym.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gym/train_gym.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReinforcementLearning/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gym/output/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/gym_environment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gym/test_gym.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gym/test_gym.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gym/train_gym.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gym/train_gym.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pacman/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pacman/ghosts.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/ghosts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/game_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,48 +51,53 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.PacmanGame.executor&quot;: &quot;Run&quot;,
-    &quot;Python.auto_run.executor&quot;: &quot;Run&quot;,
-    &quot;Python.deep_q_network.executor&quot;: &quot;Run&quot;,
-    &quot;Python.fruit.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ghosts.executor&quot;: &quot;Run&quot;,
-    &quot;Python.gym.executor&quot;: &quot;Run&quot;,
-    &quot;Python.run.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_gym.executor&quot;: &quot;Run&quot;,
-    &quot;Python.text.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Fukien/PycharmProjects/AutoPacman&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.PacmanGame.executor": "Run",
+    "Python.auto_run.executor": "Run",
+    "Python.deep_q_network.executor": "Run",
+    "Python.fruit.executor": "Run",
+    "Python.ghosts.executor": "Run",
+    "Python.gym.executor": "Run",
+    "Python.gym_test.executor": "Run",
+    "Python.gym_train.executor": "Run",
+    "Python.run.executor": "Run",
+    "Python.test_gym.executor": "Run",
+    "Python.text.executor": "Run",
+    "Python.train.executor": "Run",
+    "Python.train_pacman.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Fukien/PycharmProjects/AutoPacman/Gym/output",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Fukien\PycharmProjects\AutoPacman\Gym\output" />
       <recent name="C:\Users\Fukien\PycharmProjects\AutoPacman" />
       <recent name="C:\Users\student\PycharmProjects\AutoPacman" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Fukien\PycharmProjects\AutoPacman\Pacman" />
+      <recent name="C:\Users\Fukien\PycharmProjects\AutoPacman\output" />
       <recent name="C:\Users\Fukien\PycharmProjects\AutoPacman\Gym" />
       <recent name="C:\Users\Fukien\PycharmProjects\AutoPacman\ReinforcementLearning" />
-      <recent name="C:\Users\Fukien\PycharmProjects\AutoPacman\Pacman" />
       <recent name="C:\Users\Fukien\PycharmProjects\AutoPacman" />
-      <recent name="C:\Users\student\PycharmProjects\AutoPacman\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.gym_test">
-    <configuration name="PacmanGame" type="PythonConfigurationType" factoryName="Python">
+  <component name="RunManager" selected="Python.train_pacman">
+    <configuration name="Pacman(manually)" type="PythonConfigurationType" factoryName="Python">
       <module name="AutoPacman" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -158,10 +167,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="train_pacman" type="PythonConfigurationType" factoryName="Python">
+      <module name="AutoPacman" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.12 (AutoPacman)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/train.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Python.PacmanGame" />
+      <item itemvalue="Python.Pacman(manually)" />
       <item itemvalue="Python.gym_test" />
       <item itemvalue="Python.gym_train" />
+      <item itemvalue="Python.train_pacman" />
     </list>
   </component>
   <component name="SharedIndexes">

@@ -73,6 +73,10 @@ class GameController(object):
         self.ghosts.clyde.startNode.denyAccess(LEFT, self.ghosts.clyde)
         self.mazedata.obj.denyGhostsAccess(self.ghosts, self.nodes)
 
+        if is_in_rl_environment:
+            self.pause.paused = False
+            self.showEntities()
+
     def startGame_old(self):
         self.mazedata.loadMaze(self.level)  #######
         self.mazesprites = MazeSprites("resources/maze1.txt", "resources/maze1_rotation.txt")
@@ -117,7 +121,6 @@ class GameController(object):
         if self.pacman.alive:
             if not self.pause.paused:
                 self.pacman.update(dt)
-                print(self.pacman.position)
         else:
             self.pacman.update(dt)
 
@@ -256,11 +259,23 @@ class GameController(object):
     def nextLevel(self):
         self.showEntities()
         self.level += 1
-        self.pause.paused = True
+        self.pause = True
         self.startGame()
         self.textgroup.updateLevel(self.level)
 
-    def restartGame(self):
+    def restartGame(self) -> None:
+        if is_in_rl_environment:
+            self.lives = 5
+            self.level = 0
+            self.pause.paused = False
+            self.fruit = None
+            self.startGame()
+            self.score = 0
+            self.textgroup.updateScore(self.score)
+            self.textgroup.updateLevel(self.level)
+            self.lifesprites.resetLives(self.lives)
+            self.fruitCaptured = []
+            return None
         self.lives = 5
         self.level = 0
         self.pause.paused = True
@@ -272,13 +287,21 @@ class GameController(object):
         self.textgroup.showText(READYTXT)
         self.lifesprites.resetLives(self.lives)
         self.fruitCaptured = []
+        return None
 
-    def resetLevel(self):
+    def resetLevel(self) -> None:
+        if is_in_rl_environment:
+            self.pause.paused = False
+            self.pacman.reset()
+            self.ghosts.reset()
+            self.fruit = None
+            return None
         self.pause.paused = True
         self.pacman.reset()
         self.ghosts.reset()
         self.fruit = None
         self.textgroup.showText(READYTXT)
+        return None
 
     def updateScore(self, points):
         self.score += points

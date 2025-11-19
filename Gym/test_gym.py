@@ -1,5 +1,5 @@
 import random
-import gym
+import gymnasium as gym
 import numpy as np
 import torch
 from ReinforcementLearning.deep_q_network import DeepQNetwork
@@ -26,3 +26,17 @@ replay_buffer = ReplayBuffer(buffer_size)
 state_dim = env.observation_space.shape[0]
 action_dim = env.action_space.n
 agent = DeepQNetwork(state_dim, hidden_dim, action_dim, lr, gamma, epsilon, target_update, device)
+agent.load_state_dict(torch.load("output\\gym.pth"))
+
+state, info = env.reset()
+done = False
+episode_return = 0
+while not done:
+    env.render()
+    action = agent.take_action(state)
+    next_state, reward, done, _, _ = env.step(action)
+    replay_buffer.add(state, action, reward, next_state, done)
+    state = next_state
+    episode_return += reward
+
+env.close()

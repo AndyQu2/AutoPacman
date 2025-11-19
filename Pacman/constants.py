@@ -42,3 +42,10 @@ LEVELTXT = 1
 READYTXT = 2
 PAUSETXT = 3
 GAMEOVERTXT = 4
+
+is_in_rl_environment = True
+
+def set_rl_environment(in_rl_environment: bool) -> None:
+    global is_in_rl_environment
+    is_in_rl_environment = in_rl_environment
+    return None
