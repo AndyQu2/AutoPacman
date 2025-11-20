@@ -3,10 +3,19 @@ import random
 import numpy as np
 import torch
 import tqdm
+from matplotlib import pyplot as plt
 
 from Pacman.gym_environment import PacmanEnvironment
 from ReinforcementLearning.deep_q_network import DeepQNetwork
 from ReinforcementLearning.replay_buffer import ReplayBuffer
+
+def moving_average(a, window_size):
+    cumulative_sum = np.cumsum(np.insert(a, 0, 0))
+    middle = (cumulative_sum[window_size:] - cumulative_sum[:-window_size]) / window_size
+    r = np.arange(1, window_size-1, 2)
+    begin = np.cumsum(a[:window_size-1])[::2] / r
+    end = (np.cumsum(a[:-window_size:-1])[::2] / r)[::-1]
+    return np.concatenate((begin, middle, end))
 
 num_epochs = 10
 lr = 2e-3
@@ -17,7 +26,7 @@ epsilon = 0.01
 target_update = 10
 buffer_size = 10000
 minimal_size = 500
-batch_size = 128
+batch_size = 256
 device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
 
 env = PacmanEnvironment(render_mode='human')
@@ -61,6 +70,20 @@ for i in range(10):
                     '%.3f' % np.mean(return_list[-10:])
                 })
             pbar.update(1)
+
+episodes_list = list(range(len(return_list)))
+plt.plot(episodes_list, return_list)
+plt.xlabel('Episodes')
+plt.ylabel('Returns')
+plt.title('DQN on {}'.format("AutoPacman Training Environment"))
+plt.show()
+
+mv_return = moving_average(return_list, 9)
+plt.plot(episodes_list, mv_return)
+plt.xlabel('Episodes')
+plt.ylabel('Returns')
+plt.title('DQN on {}'.format("AutoPacman Training Environment"))
+plt.show()
 
 env.close()
 print("Training finished")

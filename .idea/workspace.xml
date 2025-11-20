@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7545daa4-55e5-494c-adbb-102b577629d5" name="Changes" comment="Minor improvement in render the Gym Environment">
-      <change afterPath="$PROJECT_DIR$/ReinforcementLearning/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
+    <list default="true" id="7545daa4-55e5-494c-adbb-102b577629d5" name="Changes" comment="Add the support of gym and add the training program of AutoPacman">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gym/output/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/gym_environment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gym/test_gym.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gym/test_gym.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gym/train_gym.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gym/train_gym.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pacman/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pacman/ghosts.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/ghosts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/game_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,37 +43,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.PacmanGame.executor": "Run",
-    "Python.auto_run.executor": "Run",
-    "Python.deep_q_network.executor": "Run",
-    "Python.fruit.executor": "Run",
-    "Python.ghosts.executor": "Run",
-    "Python.gym.executor": "Run",
-    "Python.gym_test.executor": "Run",
-    "Python.gym_train.executor": "Run",
-    "Python.run.executor": "Run",
-    "Python.test_gym.executor": "Run",
-    "Python.text.executor": "Run",
-    "Python.train.executor": "Run",
-    "Python.train_pacman.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Fukien/PycharmProjects/AutoPacman/Gym/output",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.PacmanGame.executor&quot;: &quot;Run&quot;,
+    &quot;Python.auto_run.executor&quot;: &quot;Run&quot;,
+    &quot;Python.deep_q_network.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fruit.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ghosts.executor&quot;: &quot;Run&quot;,
+    &quot;Python.gym.executor&quot;: &quot;Run&quot;,
+    &quot;Python.gym_test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.gym_train.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_gym.executor&quot;: &quot;Run&quot;,
+    &quot;Python.text.executor&quot;: &quot;Run&quot;,
+    &quot;Python.train.executor&quot;: &quot;Run&quot;,
+    &quot;Python.train_pacman.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Fukien/PycharmProjects/AutoPacman/Gym/output&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Fukien\PycharmProjects\AutoPacman\Gym\output" />
@@ -253,7 +245,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763354075325</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add the support of gym and add the training program of AutoPacman">
+      <option name="closed" value="true" />
+      <created>1763544135778</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1763544135778</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,7 +264,8 @@
     <MESSAGE value="Testing the deep learning model on GYM, error: ValueError: expected sequence of length 4 at dim 2 (got 0) in line 40, test_gym.py" />
     <MESSAGE value="Fixed bug" />
     <MESSAGE value="Minor improvement in render the Gym Environment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor improvement in render the Gym Environment" />
+    <MESSAGE value="Add the support of gym and add the training program of AutoPacman" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add the support of gym and add the training program of AutoPacman" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AutoPacman$fruit.coverage" NAME="fruit Coverage Results" MODIFIED="1760770028576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Pacman" />
