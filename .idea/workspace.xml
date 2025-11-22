@@ -4,20 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7545daa4-55e5-494c-adbb-102b577629d5" name="Changes" comment="Add supporting of plotting graph">
-      <change afterPath="$PROJECT_DIR$/ReinforcementLearning/actor_critic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ReinforcementLearning/policy_net.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ReinforcementLearning/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ReinforcementLearning/value_net.py" afterDir="false" />
+    <list default="true" id="7545daa4-55e5-494c-adbb-102b577629d5" name="Changes" comment="Change the model structure to Actor-Critic model">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gym/test_gym.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gym/test_gym.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gym/train_gym.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gym/train_gym.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pacman/game_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/game_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pacman/gym_environment.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/gym_environment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReinforcementLearning/deep_q_network.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReinforcementLearning/q_network.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReinforcementLearning/replay_buffer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auto_play.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_play.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReinforcementLearning/policy_net.py" beforeDir="false" afterPath="$PROJECT_DIR$/ReinforcementLearning/policy_net.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReinforcementLearning/value_net.py" beforeDir="false" afterPath="$PROJECT_DIR$/ReinforcementLearning/value_net.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -298,7 +290,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763603665122</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Change the model structure to Actor-Critic model">
+      <option name="closed" value="true" />
+      <created>1763792165276</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1763792165276</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,7 +311,8 @@
     <MESSAGE value="Minor improvement in render the Gym Environment" />
     <MESSAGE value="Add the support of gym and add the training program of AutoPacman" />
     <MESSAGE value="Add supporting of plotting graph" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add supporting of plotting graph" />
+    <MESSAGE value="Change the model structure to Actor-Critic model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change the model structure to Actor-Critic model" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AutoPacman$fruit.coverage" NAME="fruit Coverage Results" MODIFIED="1760770028576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Pacman" />

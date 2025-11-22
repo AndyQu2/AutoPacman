@@ -17,17 +17,7 @@ class PacmanEnvironment(gym.Env):
     def __init__(self, render_mode=None):
         super(PacmanEnvironment, self).__init__()
 
-        self.render_mode = render_mode
-
-        if self.render_mode == 'human':
-            pygame.init()
-            self.screen = pygame.display.set_mode(SCREENSIZE)
-            pygame.display.set_caption('Pacman RL Environment')
-        else:
-            pygame.init()
-            self.screen = pygame.Surface(SCREENSIZE)
-
-        self.game_controller = GameController(self.screen)
+        self.game_controller = GameController()
         self.game_controller.startGame()
 
         self.action_space = spaces.Discrete(4)
