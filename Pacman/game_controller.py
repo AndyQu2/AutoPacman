@@ -13,14 +13,19 @@ from Pacman.sprites import MazeSprites
 from Pacman.mazedata import MazeData
 
 class GameController(object):
-    def __init__(self):
+    def __init__(self, screen=None):
         self.ghosts = None
         self.pellets = None
         self.pacman = None
         self.mazesprites = None
         self.nodes = None
         pygame.init()
-        self.screen = pygame.display.set_mode(SCREENSIZE, 0, 32)
+
+        if screen is not None:
+            self.screen = screen
+        else:
+            self.screen = pygame.display.set_mode(SCREENSIZE, 0, 32)
+
         self.background = None
         self.background_norm = None
         self.background_flash = None

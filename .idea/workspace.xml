@@ -5,8 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7545daa4-55e5-494c-adbb-102b577629d5" name="Changes" comment="Add supporting of plotting graph">
-      <change afterPath="$PROJECT_DIR$/auto_play.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReinforcementLearning/actor_critic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReinforcementLearning/policy_net.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReinforcementLearning/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReinforcementLearning/value_net.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gym/test_gym.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gym/test_gym.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gym/train_gym.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gym/train_gym.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pacman/game_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/game_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pacman/gym_environment.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacman/gym_environment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReinforcementLearning/deep_q_network.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReinforcementLearning/q_network.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReinforcementLearning/replay_buffer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/auto_play.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_play.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,38 +55,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.Pacman(autorun).executor": "Run",
-    "Python.PacmanGame.executor": "Run",
-    "Python.auto_run.executor": "Run",
-    "Python.deep_q_network.executor": "Run",
-    "Python.fruit.executor": "Run",
-    "Python.ghosts.executor": "Run",
-    "Python.gym.executor": "Run",
-    "Python.gym_test.executor": "Run",
-    "Python.gym_train.executor": "Run",
-    "Python.run.executor": "Run",
-    "Python.test_gym.executor": "Run",
-    "Python.text.executor": "Run",
-    "Python.train.executor": "Run",
-    "Python.train_pacman.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Fukien/PycharmProjects/AutoPacman/Gym/output",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.Pacman(autorun).executor&quot;: &quot;Run&quot;,
+    &quot;Python.PacmanGame.executor&quot;: &quot;Run&quot;,
+    &quot;Python.auto_run.executor&quot;: &quot;Run&quot;,
+    &quot;Python.deep_q_network.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fruit.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ghosts.executor&quot;: &quot;Run&quot;,
+    &quot;Python.gym.executor&quot;: &quot;Run&quot;,
+    &quot;Python.gym_test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.gym_train.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_gym.executor&quot;: &quot;Run&quot;,
+    &quot;Python.text.executor&quot;: &quot;Run&quot;,
+    &quot;Python.train.executor&quot;: &quot;Run&quot;,
+    &quot;Python.train_pacman.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Fukien/PycharmProjects/AutoPacman/Gym/output&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Fukien\PycharmProjects\AutoPacman\Gym\output" />
@@ -89,7 +101,7 @@
       <recent name="C:\Users\Fukien\PycharmProjects\AutoPacman" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Pacman(autorun)">
+  <component name="RunManager" selected="Python.train_pacman">
     <configuration name="Pacman(autorun)" type="PythonConfigurationType" factoryName="Python">
       <module name="AutoPacman" />
       <option name="ENV_FILES" value="" />
@@ -208,10 +220,10 @@
     </configuration>
     <list>
       <item itemvalue="Python.Pacman(manually)" />
+      <item itemvalue="Python.Pacman(autorun)" />
+      <item itemvalue="Python.train_pacman" />
       <item itemvalue="Python.gym_test" />
       <item itemvalue="Python.gym_train" />
-      <item itemvalue="Python.train_pacman" />
-      <item itemvalue="Python.Pacman(autorun)" />
     </list>
   </component>
   <component name="SharedIndexes">

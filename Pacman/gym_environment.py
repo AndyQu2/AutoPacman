@@ -7,28 +7,8 @@ from gymnasium import spaces
 from gymnasium.core import ObsType, ActType
 
 from Pacman.constants import SCREENWIDTH, SCREENHEIGHT, SCREENSIZE, UP, DOWN, LEFT, RIGHT, FREIGHT, set_rl_environment, \
-    SCATTER, CHASE
+    SCATTER
 from Pacman.game_controller import GameController
-
-
-def _calculate_avoid_reward(distances, modes):
-    reward = 0.0
-
-    min_danger_distance = min([dist for dist, mode in zip(distances, modes) if mode != FREIGHT], default=1000)
-    avg_danger_distance = np.mean([dist for dist, mode in zip(distances, modes) if mode != FREIGHT])
-
-    safe_distance = 60
-    if min_danger_distance > safe_distance:
-        safety_reward = min(3.0, (min_danger_distance - safe_distance) / 20)
-        reward += safety_reward
-
-    if avg_danger_distance > 80:
-        reward += 1.0
-
-    if min_danger_distance > 100 and avg_danger_distance > 120:
-        reward += 2.0
-
-    return reward
 
 
 class PacmanEnvironment(gym.Env):
@@ -37,13 +17,22 @@ class PacmanEnvironment(gym.Env):
     def __init__(self, render_mode=None):
         super(PacmanEnvironment, self).__init__()
 
-        self.game_controller = GameController()
+        self.render_mode = render_mode
+
+        if self.render_mode == 'human':
+            pygame.init()
+            self.screen = pygame.display.set_mode(SCREENSIZE)
+            pygame.display.set_caption('Pacman RL Environment')
+        else:
+            pygame.init()
+            self.screen = pygame.Surface(SCREENSIZE)
+
+        self.game_controller = GameController(self.screen)
         self.game_controller.startGame()
 
         self.action_space = spaces.Discrete(4)
-
         self.observation_space = spaces.Box(
-            low=0.0, high=1.0, shape=(12, ), dtype=np.float32
+            low=0.0, high=1.0, shape=(12,), dtype=np.float32
         )
 
         self.render_mode = render_mode
@@ -97,26 +86,21 @@ class PacmanEnvironment(gym.Env):
     def render(self):
         if self.render_mode == 'rgb_array':
             return self._render_frame()
+        elif self.render_mode == 'human':
+            self._render_frame()
         return None
 
     def _render_frame(self):
-        if self.render_mode is None:
-            return None
-
-        if self.window is None and self.render_mode == 'human':
-            pygame.init()
-            self.window = pygame.display.set_mode(SCREENSIZE)
-            pygame.display.set_caption("Pacman RL Environment")
-
         self.game_controller.render()
 
         if self.render_mode == 'human':
+            pygame.display.flip()
             pygame.event.pump()
             self.clock.tick(self.metadata['render_fps'])
             return None
         else:
             return np.transpose(
-                np.array(pygame.surfarray.pixels3d(self.game_controller.screen)),
+                np.array(pygame.surfarray.pixels3d(self.screen)),
                 axes=(1, 0, 2)
             )
 
@@ -184,70 +168,60 @@ class PacmanEnvironment(gym.Env):
         reward = 0.0
 
         score_diff = self.game_controller.score - self._last_score
-        reward += score_diff * 0.1
+        reward += score_diff
         self._last_score = self.game_controller.score
 
         if score_diff > 0:
             reward += 1.0
 
-        if self.game_controller.fruit is not None and self.game_controller.pacman.collideCheck(
-                self.game_controller.fruit):
+        if self.game_controller.fruit is not None and self.game_controller.pacman.collideCheck(self.game_controller.fruit):
             reward += 15.0
 
         current_ghost_distances, current_ghost_modes, _ = self._get_ghost_info()
+        current_ghost_distances = np.array(current_ghost_distances)
 
-        freight_count = sum(1 for mode in current_ghost_modes if mode == FREIGHT)
-        dangerous_count = sum(1 for mode in current_ghost_modes if mode in [SCATTER, CHASE])
+        freight_mask = np.array([mode == FREIGHT for mode in current_ghost_modes])
+        danger_mask = ~freight_mask
 
-        if freight_count > 0:
-            reward += self._calculate_chase_reward(current_ghost_distances, current_ghost_modes)
-        else:
-            reward += self._calculate_avoid_reward(current_ghost_distances, current_ghost_modes)
+        if np.any(freight_mask):
+            freight_distances = current_ghost_distances[freight_mask]
+            if len(freight_distances) > 0:
+                close_freight = freight_distances < 100
+                if np.any(close_freight):
+                    distance_ratios = 1.0 - freight_distances[close_freight] / 100
+                    reward += np.sum(5.0 * distance_ratios)
+
+                very_close = freight_distances < 50
+                if np.any(very_close):
+                    reward += 3.0 * np.sum(very_close)
+
+        if np.any(danger_mask):
+            danger_distances = current_ghost_distances[danger_mask]
+            min_danger_distance = np.min(danger_distances) if len(danger_distances) > 0 else 1000
+            avg_danger_distance = np.mean(danger_distances) if len(danger_distances) > 0 else 1000
+
+            if min_danger_distance > 60:
+                reward += min(3.0, (min_danger_distance - 60) / 20)
 
         distance_changes = current_ghost_distances - self._last_ghost_distances
-
-        weighted_distance_change = 0
-        for i, (distance_change, mode) in enumerate(zip(distance_changes, current_ghost_modes)):
-            if mode == FREIGHT:
-                weighted_distance_change += -distance_change * 0.1
-            else:
-                weighted_distance_change += distance_change * 0.1
-
-        reward += weighted_distance_change
+        weights = np.where(freight_mask, -0.1, 0.1)
+        reward += np.sum(distance_changes * weights)
 
         min_distance = np.min(current_ghost_distances)
         if min_distance < 30:
-            min_distance_index = np.argmin(current_ghost_distances)
-            nearest_ghost_mode = current_ghost_modes[min_distance_index]
-
-            if nearest_ghost_mode != FREIGHT:
-                danger_penalty = -20.0 * (1.0 - min_distance / 30)
-                reward += danger_penalty
+            min_idx = np.argmin(current_ghost_distances)
+            if current_ghost_modes[min_idx] != FREIGHT:
+                reward -= 20.0 * (1.0 - min_distance / 30)
             else:
-                chase_bonus = 10.0 * (1.0 - min_distance / 30)
-                reward += chase_bonus
-
-        if self.game_controller.fruit is not None:
-            pacman_pos = self.game_controller.pacman.position
-            fruit_pos = self.game_controller.fruit.position
-            distance = ((pacman_pos.x - fruit_pos.x) ** 2 + (pacman_pos.y - fruit_pos.y) ** 2) ** 0.5
-            distance_reward = max(0, 1.0 - distance / (SCREENWIDTH * 0.5))
-            reward += distance_reward * 0.1
-
-        if self.game_controller.fruit is not None:
-            pacman_pos = self.game_controller.pacman.position
-            fruit_pos = self.game_controller.fruit.position
-            distance = ((pacman_pos.x - fruit_pos.x) ** 2 + (pacman_pos.y - fruit_pos.y) ** 2) ** 0.5
-            distance_reward = max(0, 1.0 - distance / (SCREENWIDTH * 0.5))
-            reward += distance_reward * 0.1
+                reward += 10.0 * (1.0 - min_distance / 30)
 
         reward += 0.01
 
         if not self.game_controller.pacman.alive:
-            reward -= 50.0
+            reward -= 5.0
 
         if self.game_controller.pellets.isEmpty():
-            reward += 100.0
+            reward += 50.0
 
         self._last_ghost_distances = current_ghost_distances
         self._last_ghost_modes = current_ghost_modes

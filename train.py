@@ -1,91 +1,52 @@
 import random
 
-import numpy as np
 import torch
-import tqdm
 from matplotlib import pyplot as plt
 
 from Pacman.gym_environment import PacmanEnvironment
-from ReinforcementLearning.deep_q_network import DeepQNetwork
-from ReinforcementLearning.replay_buffer import ReplayBuffer
+from ReinforcementLearning import utils
+from ReinforcementLearning.actor_critic import ActorCritic
 
-def moving_average(a, window_size):
-    cumulative_sum = np.cumsum(np.insert(a, 0, 0))
-    middle = (cumulative_sum[window_size:] - cumulative_sum[:-window_size]) / window_size
-    r = np.arange(1, window_size-1, 2)
-    begin = np.cumsum(a[:window_size-1])[::2] / r
-    end = (np.cumsum(a[:-window_size:-1])[::2] / r)[::-1]
-    return np.concatenate((begin, middle, end))
+torch.backends.cudnn.benchmark = True
+torch.backends.cudnn.deterministic = False
 
-num_epochs = 10
-lr = 2e-3
-num_episodes = 500
+actor_lr = 1e-3
+critic_lr = 1e-3
+num_episodes = 2000
+num_epochs = 20
 hidden_dim = 512
-gamma = 0.98
-epsilon = 0.01
-target_update = 10
-buffer_size = 10000
-minimal_size = 500
-batch_size = 256
-device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+gamma = 0.95
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+env_name = "Pacman AutoEnvironment"
 env = PacmanEnvironment(render_mode='human')
 random.seed(0)
-np.random.seed(0)
 torch.manual_seed(0)
-replay_buffer = ReplayBuffer(buffer_size)
+
+if torch.cuda.is_available():
+    torch.cuda.manual_seed_all(0)
+
 state_dim = env.observation_space.shape[0]
 action_dim = env.action_space.n
-agent = DeepQNetwork(state_dim, hidden_dim, action_dim, lr, gamma, epsilon, target_update, device)
+agent = ActorCritic(state_dim, hidden_dim, action_dim, actor_lr, critic_lr, gamma, device)
 
-return_list = []
-for i in range(10):
-    with tqdm.tqdm(total=int(num_episodes / 10), desc='Iteration %d' % i) as pbar:
-        for i_episode in range(int(num_episodes / 10)):
-            episode_return = 0
-            state, info = env.reset()
-            done = False
-            while not done:
-                action = agent.take_action(state)
-                next_state, reward, done, _, _ = env.step(action)
-                replay_buffer.add(state, action, reward, next_state, done)
-                state = next_state
-                episode_return += reward
-                if replay_buffer.size() > minimal_size:
-                    b_s, b_a, b_r, b_ns, b_d = replay_buffer.sample(batch_size)
-                    transition_dict = {
-                        'states': b_s,
-                        'actions': b_a,
-                        'next_states': b_ns,
-                        'rewards': b_r,
-                        'dones': b_d
-                    }
-                    agent.update(transition_dict)
-            return_list.append(episode_return)
-            if (i_episode + 1) % 10 == 0:
-                pbar.set_postfix({
-                    'episode':
-                    '%d' % (num_episodes / 10 * i + i_episode + 1),
-                    'return':
-                    '%.3f' % np.mean(return_list[-10:])
-                })
-            pbar.update(1)
+return_list = utils.train_on_policy_agent(env, agent, num_episodes, num_epochs, 8)
 
 episodes_list = list(range(len(return_list)))
 plt.plot(episodes_list, return_list)
 plt.xlabel('Episodes')
 plt.ylabel('Returns')
-plt.title('DQN on {}'.format("AutoPacman Training Environment"))
+plt.title('Actor-Critic on {}'.format(env_name))
 plt.show()
 
-mv_return = moving_average(return_list, 9)
+mv_return = utils.moving_average(return_list, 9)
 plt.plot(episodes_list, mv_return)
 plt.xlabel('Episodes')
 plt.ylabel('Returns')
-plt.title('DQN on {}'.format("AutoPacman Training Environment"))
+plt.title('Actor-Critic on {}'.format(env_name))
 plt.show()
 
 env.close()
 print("Training finished")
-torch.save(agent.state_dict(), "output\\pacman.pth")
-print("Model is saved to output\\pacman.pth")
+torch.save(agent.state_dict(), "output\\gym.pth")
+print("Model is saved to output\\gym.pth")
